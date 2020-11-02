@@ -9,12 +9,13 @@
     </select>
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col">
           <h2><?php echo "David L. Limba";?></h4>
         </div>
 
+      <div class="col">
         <form id="calculator" action="" method="post">
-        <div class="col-4">
+        
           <h3><?php echo "Calculator"; ?></h3>
             <p><?php echo "Input first number:" ?></p>
               <input type="text" name="first_number" placeholder="" required>
@@ -25,6 +26,7 @@
              <input type="submit" name="sub" value="-">
              <input type="submit" name="mul" value="*">
               <input type="submit" name="div" value="/">
+              <br><br>
         </form>
           <?php
               if (isset($_POST['sum']))
@@ -32,8 +34,8 @@
                 $first_number = $_POST["first_number"];
                 $second_number = $_POST["second_number"];
                 $sum = $first_number + $second_number;
-                echo "<br>";
-                echo "<br>";
+                // echo "<br>";
+                // echo "<br>";
                 echo "Answer: ".$sum;
               }
               if (isset($_POST['sub']))
@@ -41,8 +43,8 @@
                 $first_number = $_POST["first_number"];
                 $second_number = $_POST["second_number"];
                 $sub = $first_number - $second_number;
-                echo "<br>";
-                echo "<br>";
+                // echo "<br>";
+                // echo "<br>";
                 echo "Answer: ".$sub;
               }
               if (isset($_POST['mul']))
@@ -50,8 +52,8 @@
                 $first_number = $_POST["first_number"];
                 $second_number = $_POST["second_number"];
                 $mul = $first_number * $second_number;
-                echo "<br>";
-                echo "<br>";
+                // echo "<br>";
+                // echo "<br>";
                 echo "Answer: ".$mul;
               }
               if (isset($_POST['div']))
@@ -59,15 +61,15 @@
                 $first_number = $_POST["first_number"];
                 $second_number = $_POST["second_number"];
                 $div = $first_number / $second_number;
-                echo "<br>";
-                echo "<br>";
+                // echo "<br>";
+                // echo "<br>";
                 echo "Answer: ".$div;
               }
           ?>
         </div>
 
+        <div class="col">
         <form id="GCD" action="" method="post">
-        <div class="col-4">
           <h3><?php echo "Finding GCD"; ?></h3>
             <p><?php echo "Input first number:" ?></p>
               <input type="text" name="first_number" placeholder="" required>
@@ -102,17 +104,14 @@
           ?>
 
           <style media="screen">
-            h2
-            {
-              position: relative; left: 100px; top: 190px;
+            .col{
+              float: left;
+              width: 33.33%;
             }
-            #calculator
-            {
-              position: relative; left: 400px; top: 70px;
-            }
-            #GCD
-            {
-              position: relative; left: 700px; top: -180px;
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
             }
           </style>
         </div>
